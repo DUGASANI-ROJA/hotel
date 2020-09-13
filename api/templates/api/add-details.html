@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding Details</title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <form action="" method="post">
+            {% csrf_token%}
+            <h1>welcome {{user.username}}</h1>
+            Mobile Number : <input type="number" name="phone"><br>
+            Check In Date : <input type="date" name="check_in"><br>
+            Check Out Date : <input type="date" name="check_out"><br>
+            No of Rooms Required: <input type="number" name="no_of_rooms"><br>
+            No of People: <input type="number" name="room_size"><br>
+            <input type="submit" value="Add customer Information">
+        </form>
+
+    </div>
+
+</div>
+</body>
+</html>

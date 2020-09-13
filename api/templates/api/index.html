@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    Welcome {{user.username}}
+    </h1>
+<div>
+    <div>
+        <h2><p>List of occupied rooms</p></h2>
+        {% for customer in customer_list %}
+        <strong>{{customer.name}}</strong>
+        <div>
+            {% for room in customer.room_set.all  %}
+            {{room.room_number}}--{{room.room_type}}<br>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h2><p>List of available rooms</p></h2>
+        {% for room in room_list %}
+        {{room.room_number}}--{{room.room_type}}
+        <br>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

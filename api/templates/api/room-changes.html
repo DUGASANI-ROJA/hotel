@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>welcome {{user.username}}</h1>
+{{user.username}} has authorisation to do changes
+    <div>
+        <h2><p>List of available rooms</p></h2>
+        {% for room in room_list %}
+        {{room.room_number}}--{{room.room_type}}
+        <a href="{% url 'room_details' room.id %}">details</a>
+        <br>
+        {% endfor %}
+    </div>
+</body>
+</html>

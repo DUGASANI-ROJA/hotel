@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Booking</title>
+</head>
+<body>
+<h1>Welcome {{user.username}}</h1>
+<div class="container">
+    <div>
+        {% if msg %}
+        {{msg}}
+        {% endif %}
+        <form method="post" action="">
+            {% csrf_token %}
+        <p>Here are the available rooms</p>
+        {% for room in roomlist %}
+        <input type="checkbox" id="{{room.room_number}}" name="rooms[]" value="{{room.room_number}}">{{room.room_number}}--{{room.room_type}}<br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

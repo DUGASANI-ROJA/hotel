@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room details</title>
+</head>
+<body>
+<h1>welcome {{user.username}}</h1>
+<form method="post">
+    {% csrf_token %}
+    Occupancy:
+    <select name="occupancy">
+        <option>occupied</option>
+        <option>not occupied</option>
+
+    </select><br>
+
+    Room Number:<input type="number" name="room_number" value="{{room.room_number}}"><br>
+    Room Type:<input type="text" name="room_type" value="{{room.room_type}}"><br>
+    Room Size:<input type="number" name="room_size" value="{{room.room_size}}"><br>
+    <br><input type="submit" value="Add customer Information">
+
+</form>
+</body>
+</html>
